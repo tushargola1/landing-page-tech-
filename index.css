@@ -1,0 +1,344 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root{
+        --soft-orange : hsl(35, 77%, 62%);
+        --soft-red:hsl(5, 85%, 63%);
+
+        --off-white: hsl(36, 100%, 99%);
+        --grayish-blue:  hsl(233, 8%, 79%);
+        --dark-grayish-blue :  hsl(236, 13%, 42%);
+        --very-dark-blue : hsl(240, 100%, 5%);    
+
+        --font-weight-400 : 400;
+        --font-weight-700 : 700;
+        --font-weight-800 : 800;
+    }
+    body{
+        font-size: 15px;
+        margin: 2vw 12vw;
+    overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .navigation__links{
+        display: flex;
+    
+        gap: 3vw;
+        list-style: none;
+    }
+
+    .navigation__links li{
+        font-family: 'Inter', sans-serif;
+        color: var(--dark-grayish-blue);
+        cursor: pointer;
+    }
+
+    .navigation__links li:hover{
+        color: var(--soft-red);
+        
+    }
+
+    #menu{
+            display: none;
+            position: relative;
+            cursor: pointer;
+        
+    }
+
+    #close{
+        position: relative;
+        display: none;
+    
+        cursor: pointer;
+    }
+
+    
+
+
+
+
+    .container { 
+        margin: 2vw 0;
+        display: grid;
+        grid-template-columns: 3.5fr 1.5fr;
+        grid-template-rows: 1fr;
+        gap: 0px 2vw;
+        grid-auto-flow: row;
+        grid-template-areas:
+        ". .";
+    }
+
+    #main-img{
+        width: 100%;
+        height: 60%;
+    }
+
+
+    .left-hero-section { 
+        margin-top: 2vw;
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 1fr;
+        gap: 0px 5vw;
+        grid-auto-flow: row;
+        grid-template-areas:
+        ". .";
+    }
+    
+
+    .left-hero-section h1{
+    color: var(--very-dark-blue);
+        font-size: 4em;
+    
+    }
+
+    .button p{
+        color: var(--dark-grayish-blue);
+        line-height: 1.5vw;
+
+    }
+    .button button{
+        background-color: var(--soft-red);
+    color: var(--off-white);
+        font-size: 0.8em;
+        font-weight: var(--font-weight-700);
+        text-transform: uppercase;
+        letter-spacing: 0.4vw;
+        padding: 1vw;
+    margin-top: 4vw;
+        outline: 0;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .button button:hover{
+        background-color: var(--very-dark-blue);
+    }
+
+
+
+    .right-part{
+    color: white;
+    padding: 2vw 1.5vw;
+        background-color: var(--very-dark-blue);
+    }
+
+    .right-part h3{
+    font-size: 3em;
+    color: var(--soft-orange);
+    }
+
+    article{
+        padding: 2vw 0;
+    }
+
+    article h5{
+        font-size: 1.3em;
+        margin: 0.8vw 0;
+        color: var(--off-white);
+        cursor: pointer;
+    }
+
+    article h5:hover{
+        color: var(--soft-orange);
+    }
+    article span{
+        color: var(--grayish-blue);
+        /* font-weight: var(--font-weight-700); */
+    }
+
+    hr{
+        background-color: var(--grayish-blue);
+    }
+
+.last-section{
+    margin-top: 4vw;
+    gap: 2vw;
+
+}
+
+.img{
+    width: 10vw;
+    height: 8vw;
+    max-width: 100%; /* Make sure the image doesn't exceed its container width */
+    height: auto; 
+}
+
+.number{
+    font-size: 2em;
+    color: var(--grayish-blue);
+   
+}
+
+.cont{
+    gap: 1.5vw;
+    
+}
+.valuess>p{
+    padding: 0.6vw 0;
+}
+
+
+
+
+.title{
+    color: var(--very-dark-blue);
+    font-size: 1em;
+    font-weight: var(--font-weight-800);
+    cursor: pointer;
+   
+}
+
+.title:hover{
+    color: var(--soft-red);
+}
+
+.desc{
+    font-size: 1em;
+    color: var(--dark-grayish-bluea);
+}
+    @media screen and (max-width: 768px) {
+        body {
+          font-size: 14px; /* Reduce the font size for smaller screens */
+          margin: 2vw 5vw; /* Adjust the margin for smaller screens */
+        }
+      
+        .navigation__links{
+            position: absolute;
+        right: 0;
+        top: 0;
+            flex-direction: column;
+            background-color: var(--off-white);
+            /* background-color: pink; */
+            width: 40%;
+            height: 100vh;
+            padding: 0 5vw;
+            gap: 5vw;
+        display: none;
+        /* padding: 20vw 5vw; */
+        padding: 120px 20px;
+            /* justify-content: center; */
+            /* align-items: center; */
+
+        }
+        .navigation__links li{
+            font-weight: var(--font-weight-700);
+        }
+        #menu{
+            display: block;
+            
+        }
+        .menu-opened {
+            transform: translateX(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .menu-closed {
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        .container {
+          grid-template-columns: 1fr; /* Change the grid layout to a single column on smaller screens */
+          grid-template-areas:
+            "."; /* Remove the grid layout areas for smaller screens */
+        }
+      
+        #main-img {
+          height: auto; /* Make the main image responsive */
+        }
+      
+        .left-hero-section {
+          grid-template-columns: 1fr; /* Change the grid layout to a single column on smaller screens */
+          grid-template-areas:
+            ".";
+            display: grid; /* Remove the grid layout areas for smaller screens */
+            place-items: center;
+        }
+      
+        .left-hero-section h1 {
+          font-size: 3em; /* Reduce the font size for smaller screens */
+       
+        }
+      
+        .button {
+          text-align: center; /* Center align the button for smaller screens */
+        }
+      
+        .button p {
+          font-size: 1em; /* Adjust the font size for smaller screens */
+          line-height: 1.2em;
+           margin-top: 2vw;
+        }
+      
+        .button button {
+          font-size: 0.7em; /* Reduce the button font size for smaller screens */
+          padding: 0.5em 1em;
+          margin-top: 2vw;
+        }
+      
+        .right-part {
+            margin-top: 4vw;
+          padding: 2vw; /* Adjust the padding for smaller screens */
+        }
+      
+        .right-part h3 {
+          font-size: 2.5em; /* Reduce the font size for smaller screens */
+        }
+      
+        article h5 {
+          font-size: 1em; /* Adjust the font size for smaller screens */
+          margin: 0.5em 0; /* Adjust the margin for smaller screens */
+        }
+      
+        hr {
+          margin: 1em 0; /* Adjust the margin for the <hr> element on smaller screens */
+        }
+      
+        .last-section {
+            margin-top: 2vw; /* Adjust the top margin for smaller screens */
+            flex-wrap: wrap;
+            
+        }
+    .cont{
+     gap: 5vw;
+    }
+        .number {
+            font-size: 1.5em; /* Reduce the font size for smaller screens */
+            margin-bottom: 0.5vw; /* Adjust the bottom margin for smaller screens */
+        }
+
+        .valuess{
+            flex-direction: column;
+        }
+    .valuess>p{
+        padding: 0.8vw 0;
+    }
+        .img{
+          
+            height: 20vw;
+          width: auto;
+        }
+        .title {
+            font-size: 1em; /* Reduce the font size for smaller screens */
+        }
+    
+        .desc {
+            font-size: 1em; /* Reduce the font size for smaller screens */
+        }
+    
+      }
+
+
+
+
